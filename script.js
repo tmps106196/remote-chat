@@ -11,8 +11,13 @@ const urlid = document.getElementById("urlid")
 const num = document.getElementById("num")
 const useurl = document.getElementById("useurl")
 const test = document.getElementById("test")
-const msg = document.getElementById("msg")
+const msg = document.getElementById("msg1")
 const qrcode = document.getElementById("qrcode")
+const peercon = document.getElementById("peercon")
+
+
+
+msg.style.visibility = 'hidden';
 
 urlid.style.visibility = 'hidden';
 useurl.style.visibility = 'hidden';
@@ -54,7 +59,8 @@ useurl.addEventListener("click", function() {
     useurl.style.visibility = 'hidden';
     urlid.style.visibility = 'hidden';
     qrcode.style.visibility = 'hidden';
-    msg.innerHTML = "你的畫面:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp對方的畫面:";
+    peercon.style.visibility = 'hidden';
+    msg.style.visibility = 'visible';
 
     const remotepeerid = idd;
     const call = peer.call(remotepeerid, localStream);
@@ -67,6 +73,10 @@ useurl.addEventListener("click", function() {
 
 peer.on("call", call =>{
     call?.answer(localStream)
+    msg1.style.visibility = "visible";
+    inputlocalpeerid.style.visibility = 'hidden';
+    qrcode.style.visibility = 'hidden';
+    peercon.innerHTML = "已配對!";
     call?.on("stream", stream => {
         const remote = document.getElementById("remote");
         remote.srcObject = stream;

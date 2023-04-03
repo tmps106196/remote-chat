@@ -23,14 +23,25 @@
         background-color:#fff;
         border:2px #0062ff solid;
       }
+
+      #remote{
+			vertical-align:text-top;
+		}
+
+    #local{
+		vertical-align:text-top;
+	}
     </style>
     
-    <p></p><br>
-    <span style="font-family:Microsoft JhengHei;" id="msg">你的畫面:</span><br> 
-    <video id="local" height="300"></video>
-    <video id="remote" height="300"></video><br>
+    <span style="font-family:Microsoft JhengHei;" id="msg" >你的畫面:<video id="local" height="300"></video></span>
+    <span style="font-family:Microsoft JhengHei;" id="msg1" >對方的畫面:<video id="remote" height="300"></video><br></span><br>
+    
+     
+    
+    <span style="font-family:Microsoft JhengHei;" id="peercon">尚未配對</span><br> 
     <span style="font-family:Microsoft JhengHei;" id="localpeerid">連結載入中...</span><br> 
-    <img id="qrcode" src="" alt="error"><br>
+    <img id="qrcode" src="" alt="qrcode 載入中..."><br>
+    
     <span style="font-family:Microsoft JhengHei;" id="urlid"></span><br>
     <input type="button" id="useurl" style="width:150px;height:50px;" value="使用連結"><br>  
 
